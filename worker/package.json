@@ -1,0 +1,31 @@
+{
+  "name": "storybook-wonder-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker API for Storybook Wonder",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 execute storybook-wonder --file=./migrations/schema.sql",
+    "db:migrate:local": "wrangler d1 execute storybook-wonder --local --file=./migrations/schema.sql",
+    "db:seed": "wrangler d1 execute storybook-wonder --file=./migrations/seed.sql",
+    "db:seed:local": "wrangler d1 execute storybook-wonder --local --file=./migrations/seed.sql",
+    "db:create": "wrangler d1 create storybook-wonder",
+    "cf-typegen": "wrangler types"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hono": "^4.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "wrangler": "^3.22.1",
+    "typescript": "^5.3.3"
+  }
+}
+
+
